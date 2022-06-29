@@ -1,0 +1,10 @@
+[program:geth]
+command=geth --datadir /data/.geth --http --http.api "eth,net,web3,debug" --http.addr 0.0.0.0 --http.port 20545 --http.corsdomain '*' --ws --ws.addr 0.0.0.0 --ws.port 20546 --ws.api "eth,net,web3,debug" --graphql.corsdomain '*' --syncmode full --maxpeers 999 --http.vhosts '*'  --gpo.maxprice 1000000000000
+directory=/data/.geth
+user=ubuntu
+stopsignal=INT
+autostart=true
+autorestart=true
+startsecs=3
+stderr_logfile=/var/log/geth.err.log
+stdout_logfile=/var/log/geth.out.log
